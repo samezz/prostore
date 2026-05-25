@@ -1,0 +1,25 @@
+
+
+npx create-next-app@latest . 
+npx tailwindcss init -p 
+npx shadcn@latest add --all
+npx i lucide-reac
+npm i next-themes
+npx shadcn@latest add dropdown-menu
+
+npm install prisma @types/pg --save-dev
+npm install @prisma/client @prisma/adapter-pg pg dotenv
+npx prisma init
+
+npx prisma generate
+ npx prisma migrate dev --name init
+
+
+ npx prisma db push
+ npx tsx ./db/seed 
+ npx prisma studio
+
+ npm install zod
+
+ npm install @neondatabase/serverless @prisma/adapter-neon ws 
+ npm i -D @types/ws bufferutil
