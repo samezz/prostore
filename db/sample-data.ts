@@ -102,6 +102,23 @@ const sampleData = {
       isFeatured: true,
       banner: null,
     },
+    {
+      name: 'Ralph Lauren Custom Fit Oxford Shirt',
+      slug: 'ralph-lauren-custom-fit-oxford-shirt',
+      category: "Men's Dress Shirts",
+      description: 'Custom fit with premium oxford fabric for a polished look',
+      images: [
+        '/images/sample-products/p7-1.jpg',
+        '/images/sample-products/p7-2.jpg',
+      ],
+      price: 89.99,
+      brand: 'Ralph Lauren',
+      rating: 4.8,
+      numReviews: 15,
+      stock: 7,
+      isFeatured: false,
+      banner: null,
+    },
   ],
 };
 

@@ -23,3 +23,8 @@ npx prisma generate
 
  npm install @neondatabase/serverless @prisma/adapter-neon ws 
  npm i -D @types/ws bufferutil
+
+// TypeScript-native implementation of bcrypt, designed for edge environments such as Cloudflare Workers, 
+// Vercel Edge Functions, or any serverless platforms that don’t support native Node.js APIs. 
+
+ npm install bcrypt-ts-edge
