@@ -1,4 +1,24 @@
+import { hashSync } from 'bcrypt-ts-edge'; 
+
+
+
 const sampleData = {
+
+   users: [
+    {
+      name: 'John',
+      email: 'admin@example.com',
+      password: hashSync('123456', 10),
+      role: 'admin',
+    },
+    {
+      name: 'Jane',
+      email: 'jane@example.com',
+      password: hashSync('123456', 10),
+      role: 'user',
+    },
+  ],
+
   products: [
     {
       name: 'Polo Sporting Stretch Shirt',
@@ -115,6 +135,23 @@ const sampleData = {
       brand: 'Ralph Lauren',
       rating: 4.8,
       numReviews: 15,
+      stock: 7,
+      isFeatured: false,
+      banner: null,
+    },
+    {
+      name: 'Laurion Grep Custom Fit Oxford Shirt',
+      slug: 'laurion-grep-custom-fit-oxford-shirt',
+      category: "Men's Dress Shirts",
+      description: 'Custom fit with premium oxford fabric for a polished look',
+      images: [
+        '/images/sample-products/p8-1.jpg',
+        '/images/sample-products/p8-2.jpg',
+      ],
+      price: 69.99,
+      brand: 'Ralph Lauren',
+      rating: 4.5,
+      numReviews: 12,
       stock: 7,
       isFeatured: false,
       banner: null,

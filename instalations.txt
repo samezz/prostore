@@ -28,3 +28,12 @@ npx prisma generate
 // Vercel Edge Functions, or any serverless platforms that don’t support native Node.js APIs. 
 
  npm install bcrypt-ts-edge
+
+// Next Auth Installation
+ npm install next-auth@5.0.0-beta.25 --legacy-peer-deps
+
+ // Prisma adapter
+ npm install @auth/prisma-adapter
+
+ // Generate a Secret Key
+ openssl rand -base64 32
