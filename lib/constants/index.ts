@@ -14,3 +14,10 @@ export const SERVER_URL =
     password:'',
 
   }
+
+export const signUpDefaultValues = {
+  name: 'Samir Ezziyani',
+  email: 'samir@example.com',
+  password: 'password',
+  confirmPassword: 'password',
+};
