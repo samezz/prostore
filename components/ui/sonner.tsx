@@ -3,6 +3,20 @@
 import { useTheme } from "next-themes"
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+const ToastAction = ({ altText, className, onClick, children, ...props }: {
+  altText?: string
+  className?: string
+  onClick?: () => void
+  children: React.ReactNode
+}) => {
+  return (
+    <Button className={className} onClick={onClick} aria-label={altText} {...props}>
+      {children}
+    </Button>
+  )
+}
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme()
@@ -46,4 +60,4 @@ const Toaster = ({ ...props }: ToasterProps) => {
   )
 }
 
-export { Toaster }
+export { Toaster, ToastAction }

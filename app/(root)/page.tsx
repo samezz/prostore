@@ -1,6 +1,7 @@
 
 import ProductList from '@/components/shared/product/product-list';
 import { getLatestProducts } from '@/lib/actions/product.actions';
+import IconBoxes from '@/components/icon-boxes';
 
 // if you want to have a metadata with pipe "Home|prostore"
 export const metadata = {
