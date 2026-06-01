@@ -31,15 +31,31 @@ const ProfileForm = () => {
 
   const { toast } = useToast();
 
-  const onSubmit = async (values: z.infer<typeof updateProfileSchema>) => {
-    const res = await updateProfile(values);
-    if (res.success) {
-      await update({ ...session, user: { ...session?.user, name: values.name } });
-      toast({ description: 'Profile updated successfully' });
-    } else {
-      toast({ variant: 'destructive', description: res.message });
-    }
+  // Submit form to update profile
+async function onSubmit(values: z.infer<typeof updateProfileSchema>) {
+  const res = await updateProfile(values);
+
+  if (!res.success)
+    return toast({
+      variant: 'destructive',
+      description: res.message,
+    });
+
+  const newSession = {
+    ...session,
+    user: {
+      ...session?.user,
+      name: values.name,
+    },
   };
+
+  await update(newSession);
+
+  toast({
+    description: res.message,
+  });
+}
+
 
   return (
     <Form {...form}>
@@ -60,7 +76,7 @@ const ProfileForm = () => {
                     className='input-field'
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage /> {/* show error if the form is empty or less 3 characters */}
               </FormItem>
             )}
           />
